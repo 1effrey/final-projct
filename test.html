@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>litle game</title>
+  <link rel="stylesheet" href="testDes.css">
+</head>
+<body>
+  <p>rock paper scissors</p>
+  <button onclick="play('rock')">rock</button>
+  <button onclick="play('paper')">paper</button>
+  <button onclick="play('scissors')">scissors</button><br>
+  <div class="result" id="result"></div>
+  <div class="score">
+    <div>Wins: <span id="wins">0</span></div>
+    <div>Losses: <span id="losses">0</span></div>
+  </div>
+
+  <script>
+    let wins = 0;
+    let losses = 0;
+
+    function play(playerMove) {
+      const compMove = pickCompMove();
+      let result = '';
+
+      if (compMove === playerMove) {
+        result = 'It\'s a tie!';
+      } else if (
+        (compMove === 'rock' && playerMove === 'scissors') ||
+        (compMove === 'paper' && playerMove === 'rock') ||
+        (compMove === 'scissors' && playerMove === 'paper')
+      ) {
+        result = 'You lose!';
+        losses++;
+      } else {
+        result = 'You win!';
+        wins++;
+      }
+
+      document.getElementById('result').innerText = `You picked ${playerMove}. Computer picked ${compMove}. ${result}`;
+      updateScore();
+    }
+
+    function pickCompMove() {
+      let compMove = '';
+      const randomNumber = Math.random();
+
+      if (randomNumber < 1 / 3) {
+        compMove = 'rock';
+      } else if (randomNumber < 2 / 3) {
+        compMove = 'paper';
+      } else {
+        compMove = 'scissors';
+      }
+
+      return compMove;
+    }
+
+    function updateScore() {
+      document.getElementById('wins').innerText = wins;
+      document.getElementById('losses').innerText = losses;
+    }
+  </script>
+</body>
+</html>

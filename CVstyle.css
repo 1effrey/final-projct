@@ -1,0 +1,104 @@
+ * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Exo', sans-serif;
+}
+
+body{
+  background: teal;
+}
+
+.header h1 {
+  font-size: 0; /* Set font size to 0 to hide initially */
+  opacity: 0; /* Set opacity to 0 to hide initially */
+  animation: fadeIn 1.5s forwards; /* Apply fadeIn animation */
+}
+
+@keyframes fadeIn {
+  from {
+    font-size: 0; /* Start with font size 0 */
+    opacity: 0; /* Start with opacity 0 */
+  }
+  to {
+    font-size: 60px; /* End with desired font size */
+    opacity: 1; /* End with opacity 1 */
+  }
+}
+
+
+section{
+  min-height: 100vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section:nth-child(1){
+  color:#fff;
+}
+
+section:nth-child(2){
+  color:rgb(0, 168, 168);
+  background: white;
+}
+
+section:nth-child(3){
+  color:#fff;
+}
+section:nth-child(4){
+  color:rgb(0, 169, 169);
+  background: white;
+}
+
+section .container{
+  margin: 100px;
+}
+
+section h1{
+  font-size: 60px;
+}
+
+section h2{
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+section .cards{
+   display: flex;
+}
+
+section .cards .text-card{
+  background: rgb(3, 76, 76) ;
+  margin: 20px;
+  padding: 20px;
+}
+
+section .cards .text-card h3{
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px){
+  section h1{
+    font-size: 40px;
+  }
+  section .cards{
+    flex-direction: column;
+  }
+}
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all ease 1s;
+}
+
+.reveal.active{
+  transform: translateY(0px);
+  opacity: 1;
+}

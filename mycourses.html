@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Courses</title>
+  <link rel="stylesheet" href="mycoursesDes.css">
+</head>
+<body>
+  <header>
+    <h1>My University Courses</h1>
+  </header>
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th>Course Code</th>
+          <th>Course Name</th>
+          <th>Credits</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CSC 331</td>
+          <td><a href="#web-development" onclick="toggleDescription('web-development')">Web Development</a></td>
+
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>GEPS 205</td>
+          <td><a href="#discrete-mathematics" onclick="toggleDescription('discrete-mathematics')">discrete-mathematics</a></td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>CSC 211</td>
+          <td><a href="#civic-engagement" onclick="toggleDescription('civic-engagement')">civic-engagement</a></td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>GEIT</td>
+          <td><a href="#digital-humanities" onclick="toggleDescription('digital-humanities')">digital-humanities</a></td>
+          <td>3</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="course-description" id="web-development">
+      <h2>Web Development</h2>
+      <p>Description: This course introduces web programming, focusing on client-side web app development. Students will learn how to create dynamic and interactive web pages using HTML, CSS, JavaScript, XML, and DTD. The course will also cover the basics of server-side web programming, including an introduction to web servers, databases, and server-side scripting languages. The course includes lab workshops where students will practice Web programming and apply these concepts in practic.</p>
+    </div>
+    <div class="course-description" id="civic-engagement">
+      <h2>Civic Engagement</h2>
+      <p>Description:The “Civic Engagement Journey” course is designed as a fundamental pillar of academic training, conceptually as well as empirically. It aims to help students acquire notions, concepts and practical applications indicative of a civic and citizenship commitment which would contribute to the development of society, while identifying their social, political and civic responsibilities.This course affirms an ambition to train social actors and equip them with a high ethical standard, while remaining aware of social realities at all scales: volunteering, commitment towards the environment, the persons with special needs, within NGOs, ....</p>
+    </div>
+    <div class="course-description" id="discrete-mathematics">
+      <h2>Discrete Mathematics</h2>
+      <p>Description: This course introduces the discrete methods used in computer science and applied mathematics. The topics that will be covered are regular languages, regular expressions, finite Automata and Non-regular languages. It also discusses the basic elements in number theory and introduces the graph theory.</p>
+    </div>
+    <div class="course-description" id="digital-humanities">
+      <h2>Digital Humanities</h2>
+      <p>Description:In nowadays’ world, youth are requested more than any time before, to take part in the digital culture. They are surrounded with a variety of tools and platforms that provide an interactive environment through photo sharing, video streaming, chatting…As a result, youth find themselves deeply immersed in the cyberspace not knowing the implications of their growing digital engagement. This course provides adequate literacy to the future generation and develops knowledge, values and various aspects of critical thinking, communication, and information management skills for the digital age.</p>
+    </div>
+  </main>
+
+   <script>
+function toggleDescription(courseId) {
+  console.log("Function called with courseId:", courseId);
+  var courseDiv = document.getElementById(courseId);
+  console.log("courseDiv:", courseDiv);
+  if (courseDiv) {
+    courseDiv.classList.toggle("active");
+    if (courseDiv.classList.contains("active")) {
+    
+      courseDiv.classList.add("glow-teal");
+      setTimeout(() => {
+        courseDiv.classList.remove("glow-teal");
+      }, 2000); 
+    }
+  }
+}
+
+    </script>
+  
+</body>
+</html>

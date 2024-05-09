@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hidden Box</title>
+  <link rel="stylesheet" href="CVstyle.css">
+</head>
+<body>
+
+ 
+  <section class="header">
+    <h1>more about me</h1>
+  </section>
+  <section>
+    <div class="container reveal">
+      <h2>as a developer, in development, i do:</h2>
+      <div class="cards">
+        <div class="text-card">
+          <h3>UI/UX</h3>
+          <p>Designing web/app interfaces</p>
+        </div>
+        <div class="text-card">
+          <h3>java</h3>
+          <p>can operate and fully work on java</p>
+        </div>
+        <div class="text-card">
+          <h3>html/css</h3>
+          <p>full usage of HTML5, and CSS paired with a bit of javascript</p>
+        </div>
+        <div class="text-card">
+          <h3>python</h3>
+          <p>...</p>
+        </div>
+    </div>
+  </section> 
+  <section>
+    <div class="container reveal">
+      <h2>as for educational degrees:</h2>
+      <div class="cards">
+        <div class="text-card">
+          <h3>brevet</h3>
+          <p>grade 9 certificate, with a passing degree, due to the pandemic.</p>
+        </div>
+        <div class="text-card">
+          <h3>terminal</h3>
+          <p>grade 12 certificate, with a: 12.111/20 degree.</p>
+        </div>
+        <div class="text-card">
+          <h3>college</h3>
+          <p>currently on my first year, second semester, majoring in computer science.</p>
+        </div>
+    </div>
+  </section>
+  <section>
+    <div class="container reveal">
+      <h2>skills and services:</h2>
+      <div class="cards">
+        <div class="text-card">
+          <h3> guitar: teaching / playing </h3>
+          <p>after the pandemic in 2020, i took the chance to invest in my years of playing, and currently teach and play the guitar.</p>
+        </div>
+        <div class="text-card">
+          <h3>web design</h3>
+          <p>As a new student in computer science, I have discovered a newfound passion for creating websites, designing, and channeling my energy into something meaningful that fosters personal growth, so feel free to contact me for more information</p>
+        </div>
+        <div class="text-card">
+          <h3>drawing and painting:</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, tenetur!</p>
+        </div>
+  </section> 
+
+
+  <script>
+    window.addEventListener('scroll', reveal);
+
+    function reveal(){
+      var reveals = document.querySelectorAll('.reveal')
+
+      for (var i = 0; i< reveals.length; i++){
+        var windowheight = window.innerHeight;
+        var revealtop = reveals[i].getBoundingClientRect().top;
+        var revealpoint = 150;
+
+        if(revealtop < windowheight - revealpoint){
+          reveals[i].classList.add('active');
+        }else {
+          reveals[i].classList.remove('active');
+        }
+      }
+
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: teal;
+  color: white;
+}
+
+header {
+  background: rgba(0, 75, 75, 0.74);
+  padding: 20px;
+  text-align: center;
+  color: black;
+}
+
+h1 {
+  margin: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid rgb(0, 0, 0);
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #333;
+}
+
+tr:nth-child(even) {
+  background-color: #555;
+}
+
+tr:hover {
+  background-color: #777;
+}
+
+.course-description {
+  padding: 20px;
+  background-color: rgba(0, 77, 87, 0.8);
+  color: black;
+  border: 1px solid teal;
+  margin: 70px 100px auto; /* Center horizontally and add margin on the sides */
+  border-radius: 5px; /* Add border radius for a simplistic design */
+  height: 25px; /* Initially hide the description */
+  overflow: hidden; /* Hide overflowing content */
+  transition: height 0.3s; /* Smooth transition when expanding/collapsing */
+}
+
+.course-description.active {
+  height: auto; /* Expand the description */
+}
+
+.course-description:last-child {
+  margin-bottom: 70px;
+}
+
+.course-description h2 {
+  margin-top: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: yellow;
+}
+
+.glow-teal {
+  animation: glowTeal 2s infinite alternate;
+}
+
+@keyframes glowTeal {
+  0% {
+    box-shadow: 0 0 10px 5px rgba(0, 255, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 20px 10px rgba(0, 255, 255, 0.8);
+  }
+}

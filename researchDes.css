@@ -1,0 +1,65 @@
+
+
+body{
+  height: 100vh;
+  width: 100vw;
+  background: rgb(0, 15, 15);
+  margin: 0rem;
+  overflow: hidden;
+  font-family: 'Exo', sans-serif;
+}
+
+#image-track .image{
+  width: 40vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position:100% 50% ;
+ transition: transform 0.3s ease;
+}
+
+#image-track .image:hover {
+  transform: scale(1.1); /* Increase the scale when hovered over */
+}
+
+.image-container {
+  position: relative;
+  width: 40vmin;
+  height: 56vmin;
+  overflow: hidden;
+}
+
+.image-container .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-container .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  color: rgb(207, 204, 204);
+  font-size: 24px;
+  font-weight: bold;
+  opacity: 0; /* Hide the title by default */
+  transition: opacity 0.3s ease;
+  background: rgba(0, 0, 0, 0.832);
+}
+
+.image-container:hover .title {
+  opacity: 1; /* Show the title when hovered over */
+}
+
+#image-track{
+  display: flex;
+  gap: 10vmin;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(0%, -50%)
+}
+
